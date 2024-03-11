@@ -84,6 +84,97 @@ export default <Partial<NuxtOptions['app']['head']>> {
     },
   ],
   style: [],
-  script: [],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: `
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Фёдор Гаранин (@yesfedor) - Веб-разработчик",
+  "url": "https://yesfedor.com/"
+}
+      `,
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: `
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Фёдор",
+  "url": "https://yesfedor.com/about",
+  "image": "https://yesfedor.com/me.png",
+  "sameAs": [
+    "https://vk.me/yesfedor",
+    "https://t.me/yesfedor",
+    "https://www.instagram.com/yesfedor/",
+    "https://yesfedor.com"
+  ],
+  "jobTitle": "Веб - разработчик",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ITSpecial"
+  }
+}
+      `,
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: `
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchProject",
+  "name": "ITSpecial",
+  "alternateName": "АйТиСпейшл",
+  "url": "https://itspecial.net/",
+  "logo": "https://api.itspecial.net/uploads/IT_Slogo_V2_6d09525a71.svg",
+  "sameAs": "https://itspecial.net/"
+}
+
+      `,
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: `
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "Lead Frontend Developer",
+  "description": "ключевая роль в команде разработки веб-приложений, отвечающая за координацию работы фронтенд-разработчиков и обеспечение качества и производительности фронтенд-части проекта.",
+  "hiringOrganization" : {
+    "@type": "Organization",
+    "name": "ITSpecial",
+    "sameAs": "https://itspecial.net/",
+    "logo": "https://api.itspecial.net/uploads/IT_Slogo_V2_6d09525a71.svg"
+  },
+  "employmentType": "FULL_TIME",
+  "workHours": "10am-19pm",
+  "datePosted": "2023-10-09",
+  "validThrough": "",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "RU"
+  },
+  "jobLocationType": "TELECOMMUTE"
+}
+      `,
+    },
+    {
+      type: 'text/javascript',
+      innerHTML: `
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+ m[i].l=1*new Date();
+ for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+ k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+ (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ ym(94493534, "init", {
+  clickmap:true,
+  trackLinks:true,
+  accurateTrackBounce:true
+ });
+      `,
+    },
+  ],
   noscript: [],
 }

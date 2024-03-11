@@ -36,6 +36,7 @@ useSeoMeta({
   profileLastName: 'Гаранин',
   mobileWebAppCapable: 'yes',
   appleMobileWebAppTitle: 'Фёдор Гаранин (@yesfedor) - Веб-разработчик',
+  ogLocale: 'ru',
 })
 </script>
 
