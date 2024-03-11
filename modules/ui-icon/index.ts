@@ -43,7 +43,7 @@ export default defineNuxtModule({
     addTypeTemplate({
       filename: 'types/ui-icon.d.ts',
       getContents: () => {
-        return /* ts */`export type TUiIconNames = "${iconKeys.join(' | ')}" | string`
+        return /* ts */`export type TUiIconNames = ${iconKeys.map(icon => `"${icon}"`).join(' | ')} | string`
       },
     })
 

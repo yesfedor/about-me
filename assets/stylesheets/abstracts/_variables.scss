@@ -1,1 +1,65 @@
 /* variables */
+
+/* Breakpoints */
+$breakpoints: (
+  min-width: 360px,
+  mobile: 600px,
+  tablet: 768px,
+  desktop: 1200px
+);
+
+/* Fonts */
+$fonts: (
+  source_code: "Source Code Pro"
+);
+
+/* Gaps */
+$gaps: (
+  0: 0,
+  1: 1rem,
+  2: 2rem,
+  4: 4rem,
+  6: 6rem,
+  8: 8rem,
+  10: 10rem,
+  12: 12rem,
+  14: 14rem,
+  16: 16rem,
+  20: 20rem,
+  24: 24rem,
+  28: 28rem,
+  30: 30rem,
+  32: 32rem,
+  36: 36rem,
+  48: 48rem,
+  64: 64rem,
+  80: 80rem
+);
+
+/* Themes */
+$themes: (
+  light: (
+    primary: '#f58545',
+    heading: '#ffffff',
+    text: '#fafafa',
+    link: '#3b8aff',
+    link-hover: '#42a5f5',
+    link-disabled: '#000000',
+    background: '#ffffff',
+    image-border: '#ffffff',
+    panel-background: '#222222',
+    header-background: '#444444'
+  ),
+  dark: (
+    primary: '#f58545',
+    heading: '#121212',
+    text: '#000000',
+    link: '#3b8aff',
+    link-hover: '#42a5f5',
+    link-disabled: '#000000',
+    background: '#ffffff'
+  )
+);
+
+$theme-light: map-get($themes, 'light');
+$theme-dark: map-get($themes, 'dark');

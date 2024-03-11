@@ -13,3 +13,14 @@ const contentClasses = computed(() => {
   }
 })
 </script>
+
+<style lang="scss">
+.app-layout-provider {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app-layout {
+  min-height: 100vh;
+}
+</style>

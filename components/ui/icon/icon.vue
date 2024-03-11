@@ -17,7 +17,7 @@ interface Props {
   size?: number
 }
 
-const props = withDefaults(defineProps<Props>(), { filled: false, size: 16 })
+const props = withDefaults(defineProps<Props>(), { filled: false, size: 0 })
 const { filled, size } = toRefs(props)
 
 const customStyle = computed(() => {
@@ -25,7 +25,7 @@ const customStyle = computed(() => {
     return {}
   }
   return {
-    fontSize: `${size.value}px`,
+    fontSize: `${size.value}rem`,
   }
 })
 </script>

@@ -8,9 +8,9 @@
 @import "vendors/base";
 
 /* 3. base */
-@import "base/animations";
-@import "base/base";
 @import "base/reset";
+@import "base/base";
+@import "base/animations";
 @import "base/typography";
 
 /* 4. partials - layout */
@@ -19,7 +19,11 @@
 
 /* 6. pages */
 
+@import "themes/variables";
 /* 7. themes */
 
-/* 8. shame */
+/* 8. utils */
+@import "utils/gaps";
+
+/* 9. shame */
 @import "shame";

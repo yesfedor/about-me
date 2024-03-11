@@ -1,30 +1,24 @@
 <template>
-  <div class="app-page-home">
-    <h1 class="app-page-home__title">
-      {{ $t('welcome') }}
-    </h1>
-
-    <ui-icon name="reorder" filled />
-
-    <p>This is production: Nuxt Core Template v3.10.0</p>
-
-    <p>Host: {{ baseUrl }}</p>
-  </div>
+  <layout-page-provider name="index">
+    <h1 class="app-page-index__title">Фёдор Гаранин</h1>
+    <p class="app-page-index__subtitle">Frontend Developer</p>
+  </layout-page-provider>
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  layout: 'default',
-})
 
-const config = useRuntimeConfig()
-const baseUrl = ref(config.public.BASE_URL)
 </script>
 
 <style lang="scss">
-.app-page-home {
-  &__title {
-    color: dodgerblue;
+.app-page-index {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__subtitle {
+    margin-top: 20rem;
   }
 }
 </style>

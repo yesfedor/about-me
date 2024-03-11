@@ -59,7 +59,7 @@ export default defineNuxtConfig({
   },
   modules: [
     // https://github.com/nuxt-modules/stylelint
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // https://nuxt.com/modules/pinia
     '@pinia/nuxt',
     // https://nuxt.com/modules/vite-pwa-nuxt

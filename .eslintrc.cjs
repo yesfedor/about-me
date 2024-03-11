@@ -33,11 +33,7 @@ module.exports = {
     'no-console': 'warn',
     'no-debugger': 'warn',
     'no-empty': 'off',
-    'no-unused-vars': ['warn', {
-      'caughtErrors': 'none',
-      'args': 'after-used',
-      'vars': 'local',
-    }],
+    'no-unused-vars': 'off',
     'no-multiple-empty-lines': 'error',
     'arrow-parens': ['warn', 'as-needed'],
     'object-curly-spacing': ['warn', 'always'],
@@ -53,17 +49,14 @@ module.exports = {
 
     // Vue / Nuxt
     'vue/no-v-html': 'warn',
+    'vue/html-self-closing': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/attribute-hyphenation': 'warn',
     'vue/attributes-order': 'warn',
-    'vue/singleline-html-element-content-newline': ['error', {
-      'ignoreWhenNoAttributes': true,
-      'ignoreWhenEmpty': true,
-      'ignores': ['pre', 'textarea'],
-    }],
+    'vue/singleline-html-element-content-newline': 'off',
     'vue/max-attributes-per-line': ['error', {
       'singleline': {
-        'max': 3,
+        'max': 5,
       },
       'multiline': {
         'max': 1,

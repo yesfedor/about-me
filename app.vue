@@ -1,5 +1,5 @@
 <template>
-  <div class="app-root">
+  <div class="app-root" v-bind="themeProvider.bind.value">
     <NuxtPwaManifest />
 
     <NuxtLayout fallback="default">
@@ -11,5 +11,5 @@
 </template>
 
 <script setup lang="ts">
-
+const themeProvider = useThemeProvider()
 </script>

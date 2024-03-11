@@ -1,6 +1,6 @@
 <template>
-  <layout-provider #default="{ contentClasses }">
-    <div class="app-layout app-layout--clear">
+  <layout-provider v-slot="{ contentClasses }">
+    <div class="app-layout app-layout-clear">
       <div :class="contentClasses" class="app-layout__content">
         <slot />
       </div>
