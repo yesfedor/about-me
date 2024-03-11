@@ -3,9 +3,9 @@
     <NuxtPwaManifest />
 
     <NuxtLayout name="default">
-      <pre>
-        {{ error.message }}
-      </pre>
+      <layout-page-provider name="error">
+        <ui-icon name="404" filled />
+      </layout-page-provider>
     </NuxtLayout>
 
     <CommonScope />
@@ -16,3 +16,24 @@
 const error = useError()
 const themeProvider = useThemeProvider()
 </script>
+
+<style lang="scss">
+.app-page-error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include bp-desktop {
+    min-height: 100%;
+  }
+
+  .ui-icon {
+    font-size: 320rem;
+
+    @include bp-tablet {
+      font-size: 680rem;
+    }
+  }
+}
+</style>

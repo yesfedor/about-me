@@ -51,6 +51,7 @@ const toggle = () => {
   border: unset !important;
   border-radius: 100%;
   background: var(--theme-header-background);
+  transition: background 200ms;
 
   &__icon {
     color: var(--theme-text);

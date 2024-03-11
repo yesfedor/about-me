@@ -8,7 +8,9 @@
         :class="contentClasses"
         class="app-layout__content app-layout-default__content"
       >
-        <slot />
+        <div class="app-layout-default__scroll">
+          <slot />
+        </div>
       </div>
 
       <div class="app-layout-default__nav">
@@ -19,7 +21,22 @@
 </template>
 
 <script setup lang="ts">
+const nuxt = useNuxtApp()
+const config = nuxt.$config
 
+useSeoMeta({
+  ogType: 'profile',
+  ogTitle: 'Фёдор Гаранин (@yesfedor) - Веб-разработчик',
+  ogDescription: 'Фёдор Гаранин - ведущий разработчик программного обеспечения. Работает в сфере веб-разработки.',
+  ogUrl: config.public.BASE_URL,
+  ogImageUrl: `${config.public.BASE_URL}/me.png`,
+  profileGender: 'male',
+  profileUsername: 'yesfedor',
+  profileFirstName: 'Фёдор',
+  profileLastName: 'Гаранин',
+  mobileWebAppCapable: 'yes',
+  appleMobileWebAppTitle: 'Фёдор Гаранин (@yesfedor) - Веб-разработчик',
+})
 </script>
 
 <style lang="scss">
@@ -34,9 +51,30 @@
     background: var(--theme-header-background);
   }
 
-  &__content {
-    padding: 24rem;
+  &__scroll {
+    padding: 24rem 10rem;
     min-height: 100vh;
+    height: 100vh;
+    position: relative;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4rem;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5rem;
+      background: var(--theme-header-background);
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 5rem;
+      background: var(--theme-panel-background);
+    }
+  }
+
+  &__content {
     background: var(--theme-panel-background);
   }
 
@@ -57,10 +95,14 @@
       border-radius: 32rem 0 0 32rem;
     }
 
-    &__content {
-      padding: 32rem;
+    &__scroll {
+      padding: 60rem 24rem 48rem 60rem;
       min-height: 80vh;
       height: 80vh;
+    }
+
+    &__content {
+      padding-right: 32rem;
       position: relative;
       grid-area: content;
       border-radius: 32rem;

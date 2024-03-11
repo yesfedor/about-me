@@ -19,8 +19,13 @@ const contentClasses = computed(() => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: var(--theme-background);
 }
 .app-layout {
   min-height: 100vh;
+  z-index: 1;
 }
 </style>
