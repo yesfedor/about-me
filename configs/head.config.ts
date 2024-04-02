@@ -104,7 +104,7 @@ export default <Partial<NuxtOptions['app']['head']>> {
   "@type": "Person",
   "name": "Фёдор",
   "url": "https://yesfedor.com/about",
-  "image": "https://yesfedor.com/me.png",
+  "image": "https://yesfedor.com/images/me.png",
   "sameAs": [
     "https://vk.me/yesfedor",
     "https://t.me/yesfedor",
