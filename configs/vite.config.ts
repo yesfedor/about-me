@@ -1,4 +1,3 @@
-import eslintPlugin from 'vite-plugin-eslint'
 import type { NuxtOptions } from '@nuxt/schema'
 
 export default <Partial<NuxtOptions['vite']>> {
@@ -12,9 +11,6 @@ export default <Partial<NuxtOptions['vite']>> {
       },
     },
   },
-  plugins: [
-    eslintPlugin(),
-  ],
   server: {
     watch: {
       usePolling: true,

@@ -8,22 +8,14 @@
 @import "vendors/base";
 
 /* 3. base */
-@import "base/reset";
-@import "base/base";
+@import "base/theming";
 @import "base/animations";
+@import "base/base";
+@import "base/reset";
 @import "base/typography";
 
-/* 4. partials - layout */
-
-/* 5. modules - components */
-
 /* 6. pages */
+@import "pages/global";
 
-@import "themes/variables";
-/* 7. themes */
-
-/* 8. utils */
-@import "utils/gaps";
-
-/* 9. shame */
+/* 8. shame */
 @import "shame";

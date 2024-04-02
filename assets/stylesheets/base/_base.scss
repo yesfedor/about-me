@@ -1,32 +1,32 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+* {
+  transition-property: border, color, background, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 
 html {
-  min-width: map-get($breakpoints, min-width);
+  scroll-behavior: smooth;
+  overflow: hidden;
   font-size: calc(1vw / 3.6);
 
-  @include bp-tablet {
+  @media #{map-get($display-rules, 'sm')} {
     font-size: calc(1vw / 7.68);
   }
 
-  @include bp-desktop {
+  @media #{map-get($display-rules, 'md')} {
+    font-size: calc(1vw / 10.24);
+  }
+
+  @media #{map-get($display-rules, 'lg')} {
+    font-size: calc(1vw / 14.4);
+  }
+
+  @media #{map-get($display-rules, 'xl')} {
     font-size: calc(1vw / 19.2);
   }
 }
 
 body {
-  font-family: map-get($fonts, source_code);
-  font-size: map-get($gaps, 16);
-  color: var(--theme-text);
-  background: var(--theme-background);
-  font-weight: 400;
-  line-height: normal;
-}
-
-* {
-  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-family: 'Manrope', sans-serif;
 }

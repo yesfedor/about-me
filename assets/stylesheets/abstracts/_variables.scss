@@ -1,65 +1,35 @@
+@use "functions" as *;
+
 /* variables */
 
-/* Breakpoints */
-$breakpoints: (
-  min-width: 360px,
-  mobile: 600px,
-  tablet: 768px,
-  desktop: 1200px
+// Breakpoints
+$display-breakpoints: (
+  'xs': '360px',
+  'sm': '768px',
+  'md': '1024px',
+  'lg': '1440px',
+  'xl': '1800px',
 );
 
-/* Fonts */
-$fonts: (
-  source_code: "Source Code Pro"
-);
+$display-rules: generate-breakpoints-rule($display-breakpoints);
 
-/* Gaps */
-$gaps: (
-  0: 0,
-  1: 1rem,
-  2: 2rem,
-  4: 4rem,
-  6: 6rem,
-  8: 8rem,
-  10: 10rem,
-  12: 12rem,
-  14: 14rem,
-  16: 16rem,
-  20: 20rem,
-  24: 24rem,
-  28: 28rem,
-  30: 30rem,
-  32: 32rem,
-  36: 36rem,
-  48: 48rem,
-  64: 64rem,
-  80: 80rem
-);
-
-/* Themes */
+// Theme Colors
 $themes: (
   light: (
-    primary: '#9e59aa',
-    heading: '#ffffff',
-    text: '#fafafa',
-    link: '#3b8aff',
-    link-hover: '#42a5f5',
-    link-disabled: '#000000',
-    background: '#121212',
-    image-border: '#ffffff',
-    panel-background: '#222222',
-    header-background: '#444444'
+    background: #fff,
+    background-shadow: rgba(225, 225, 225, 0.25),
+    primary: #000,
+    surface: #f9f9f9,
   ),
   dark: (
-    primary: '#f58545',
-    heading: '#121212',
-    text: '#000000',
-    link: '#3b8aff',
-    link-hover: '#42a5f5',
-    link-disabled: '#000000',
-    background: '#ffffff'
+    background: #000,
+    background-shadow: rgba(0, 0, 0, 0.25),
+    primary: #fff,
+    surface: #fefefe,
   )
 );
 
-$theme-light: map-get($themes, 'light');
-$theme-dark: map-get($themes, 'dark');
+$theme-palette: create-scss-colors-var(map-get($themes, 'light'));
+
+// Fonts
+$display-font: 'DotGothic16', sans-serif;

@@ -26,6 +26,11 @@ export default defineNuxtConfig({
         pathPrefix: true,
         prefix: 'Ui',
       },
+      {
+        path: '~/components',
+        pathPrefix: true,
+        prefix: 'App',
+      },
     ],
   },
   css: [
@@ -39,8 +44,26 @@ export default defineNuxtConfig({
     enabled: Boolean(process.env.APP_DEVTOOLS),
   },
   experimental: experimentalConfig,
+  modules: [
+    // https://nuxt.com/modules/icons
+    'nuxt-icons',
+    // https://v8.i18n.nuxtjs.org/options/vue-i18n
+    '@nuxtjs/i18n',
+    // https://nuxt.com/modules/device
+    '@nuxtjs/device',
+    // https://google-fonts.nuxtjs.org/
+    '@nuxtjs/google-fonts',
+  ],
+  postcss: {
+    plugins: {
+      cssnano: { preset: 'default' },
+      autoprefixer: {
+        cascade: false,
+      },
+    },
+  },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'ru',
     detectBrowserLanguage: {
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
@@ -53,40 +76,21 @@ export default defineNuxtConfig({
         code: 'en',
         file: 'en.ts',
       },
+      {
+        code: 'ru',
+        file: 'ru.ts',
+      },
     ],
     strategy: 'prefix_except_default',
     vueI18n: './configs/i18n.config.ts',
   },
-  modules: [
-    // https://github.com/nuxt-modules/stylelint
-    // '@nuxtjs/stylelint-module',
-    // https://nuxt.com/modules/pinia
-    '@pinia/nuxt',
-    // https://nuxt.com/modules/vite-pwa-nuxt
-    // https://vite-pwa-org.netlify.app/frameworks/nuxt.html#vitepwamanifest-nuxtpwamanifest-in-app-vue
-    '@vite-pwa/nuxt',
-    // https://nuxt.com/modules/vee-validate
-    '@vee-validate/nuxt',
-    // https://nuxt.com/modules/icons
-    'nuxt-icons',
-    // https://v8.i18n.nuxtjs.org/options/vue-i18n
-    '@nuxtjs/i18n',
-    // https://nuxt.com/modules/device
-    '@nuxtjs/device',
-  ],
-  pinia: {
-    storesDirs: ['./stores/**'],
-  },
-  postcss: {
-    plugins: {
-      cssnano: { preset: 'default' },
-      autoprefixer: {
-        cascade: false,
-      },
+  googleFonts: {
+    display: 'swap',
+    prefetch: true,
+    families: {
+      'DotGothic16': [400],
+      'Manrope': '300..800',
     },
-  },
-  pwa: {
-    strategies: 'generateSW',
   },
   runtimeConfig: {
     public: {

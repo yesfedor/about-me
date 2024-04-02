@@ -14,10 +14,10 @@ import type { TUiIconNames } from '#build/types/ui-icon'
 interface Props {
   name: TUiIconNames
   filled?: boolean
-  size?: number
+  size?: number | string
 }
 
-const props = withDefaults(defineProps<Props>(), { filled: false, size: 0 })
+const props = withDefaults(defineProps<Props>(), { filled: false, size: 16 })
 const { filled, size } = toRefs(props)
 
 const customStyle = computed(() => {
@@ -32,6 +32,8 @@ const customStyle = computed(() => {
 
 <style lang="scss">
 .ui-icon {
+  color: map-get($theme-palette, 'primary');
+
   &.nuxt-icon svg {
     margin-bottom: 0;
     width: 1em;

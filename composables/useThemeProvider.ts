@@ -1,39 +1,35 @@
-export default function useThemeProvider() {
-  enum ThemeNames {
-    light = 'light',
-    dark = 'dark'
+export function useThemeProvider() {
+  enum AppThemes {
+    'light',
+    'dark',
   }
 
-  const name = useCookie<string>('app-theme-name', {
-    maxAge: 365 * 24 * 60 * 60,
-    path: '/',
-    watch: true,
-  })
+  type TThemesCondition = keyof typeof AppThemes
 
-  const change = (theme: keyof typeof ThemeNames) => {
-    if (ThemeNames[theme]) {
-      name.value = theme
+  const themeTransitionMap: { [key in TThemesCondition]: TThemesCondition } = {
+    'light': 'dark',
+    'dark': 'light',
+  }
+
+  const themeCookie = useCookie<keyof typeof AppThemes>(
+    'selected-theme',
+    {
+      watch: 'shallow',
+      default: () => 'light',
     }
+  )
+
+  const changeTheme = () => {
+    themeCookie.value = themeTransitionMap[themeCookie.value]
   }
 
-  const bind = computed(() => {
-    return {
-      'data-theme': name.value,
-    }
-  })
-
-  const setDefault = () => {
-    name.value = ThemeNames.light
-  }
-
-  if (!name.value) {
-    setDefault()
-  }
+  const getCurrentTheme = computed(() => ({
+    currentTheme: themeCookie.value,
+    nextTheme: themeTransitionMap[themeCookie.value],
+  }))
 
   return {
-    names: ThemeNames,
-    name,
-    change,
-    bind,
+    changeTheme,
+    getCurrentTheme,
   }
 }

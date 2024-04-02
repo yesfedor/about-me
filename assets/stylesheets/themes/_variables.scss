@@ -1,7 +1,0 @@
-[data-theme="light"] {
-  @include generate-theme-variables($theme-light);
-}
-
-[data-theme="dark"] {
-  @include generate-theme-variables($theme-dark);
-}

@@ -1,39 +1,7 @@
 /* mixins */
 
-/* Responsive */
-@mixin bp-max($max-width) {
-  @media only screen and (max-width: $max-width - 1) {
-    @content;
-  }
-}
-
-@mixin bp-min($min-width) {
-  @media only screen and (min-width: $min-width) {
-    @content;
-  }
-}
-
-@mixin bp-desktop($type: 'min') {
-  @media only screen and (#{$type}-width: map-get($breakpoints, desktop)) {
-    @content;
-  }
-}
-
-@mixin bp-tablet($type: 'min') {
-  @media only screen and (#{$type}-width: map-get($breakpoints, tablet)) {
-    @content;
-  }
-}
-
-@mixin bp-mobile($type: 'min') {
-  @media only screen and (#{$type}-width: map-get($breakpoints, mobile)) {
-    @content;
-  }
-}
-
-/* Theme */
-@mixin generate-theme-variables($theme-map) {
-  @each $key, $value in $theme-map {
-    --theme-#{$key}: #{$value};
+@mixin create-colors-var ($colorPalette) {
+  @each $key, $value in $colorPalette {
+    --color-#{$key}: #{$value}
   }
 }
