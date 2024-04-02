@@ -29,6 +29,7 @@ export function useThemeProvider() {
   }))
 
   return {
+    AppThemes,
     changeTheme,
     getCurrentTheme,
   }

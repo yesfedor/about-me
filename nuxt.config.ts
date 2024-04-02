@@ -73,12 +73,12 @@ export default defineNuxtConfig({
     lazy: true,
     locales: [
       {
-        code: 'en',
-        file: 'en.ts',
-      },
-      {
         code: 'ru',
         file: 'ru.ts',
+      },
+      {
+        code: 'en',
+        file: 'en.ts',
       },
     ],
     strategy: 'prefix_except_default',
